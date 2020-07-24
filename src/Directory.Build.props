@@ -1,0 +1,15 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <PackageId>SEO.OrchardCore</PackageId>
+    <Title>SEO module for Orchard Core</Title>
+    <Description>The SEO module allows you to manage metadata.</Description>
+    <PackageTags>SEO;OrchardCore</PackageTags>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <VersionSuffix>rc2</VersionSuffix>
+  </PropertyGroup>
+
+  <!-- Called after so that the <VersionSuffix> is built after the local ones -->
+  <Import Project="Common.props"/>
+
+</Project>
