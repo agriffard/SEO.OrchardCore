@@ -5,8 +5,7 @@
     <Authors>Antoine Griffard</Authors>
     <RepositoryUrl>https://github.com/agriffard/SEO.OrchardCore</RepositoryUrl>
     <PackageProjectUrl>https://github.com/agriffard/SEO.OrchardCore</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/agriffard/SEO.OrchardCore/blob/master/LICENSE.txt</PackageLicenseUrl>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFrameworks>net5.0;netcoreapp3.1</TargetFrameworks>
     <VersionSuffix Condition="'$(VersionSuffix)'!='' AND '$(BuildNumber)' != ''">$(VersionSuffix)-$(BuildNumber)</VersionSuffix>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DebugType>embedded</DebugType>
