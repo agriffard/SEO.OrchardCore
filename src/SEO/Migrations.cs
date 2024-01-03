@@ -1,6 +1,7 @@
 ﻿using OrchardCore.ContentManagement.Metadata.Settings;
 using OrchardCore.ContentManagement.Metadata;
 using OrchardCore.Data.Migration;
+using System.Threading.Tasks;
 
 namespace SEO.OrchardCore
 {
@@ -13,9 +14,9 @@ namespace SEO.OrchardCore
             _contentDefinitionManager = contentDefinitionManager;
         }
 
-        public int Create()
+        public async Task<int> CreateAsync()
         {
-            _contentDefinitionManager.AlterPartDefinition("SeoPart", builder => builder
+            await _contentDefinitionManager.AlterPartDefinitionAsync("SeoPart", builder => builder
                 .Attachable()
                 .WithDescription("Provides a SEO section for your content item."));
 
