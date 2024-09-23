@@ -1,6 +1,4 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using OrchardCore.ContentManagement.Display.ContentDisplay;
+﻿using OrchardCore.ContentManagement.Display.ContentDisplay;
 using OrchardCore.ContentManagement.Display.Models;
 using OrchardCore.ContentManagement.Metadata;
 using OrchardCore.DisplayManagement.ModelBinding;
@@ -8,6 +6,7 @@ using OrchardCore.DisplayManagement.Views;
 using OrchardCore.ResourceManagement;
 using SEO.OrchardCore.Models;
 using SEO.OrchardCore.ViewModels;
+using System.Threading.Tasks;
 
 namespace SEO.OrchardCore.Drivers
 {
@@ -49,7 +48,7 @@ namespace SEO.OrchardCore.Drivers
             return await base.DisplayAsync(part, context);
         }
 
-        public override IDisplayResult Edit(SeoPart seoPart)
+        public override IDisplayResult Edit(SeoPart seoPart, BuildPartEditorContext context)
         {
             return Initialize<SeoPartViewModel>("SeoPart_Edit", model =>
             {
@@ -58,11 +57,11 @@ namespace SEO.OrchardCore.Drivers
             }).Location("Parts#Seo:10");
         }
 
-        public override async Task<IDisplayResult> UpdateAsync(SeoPart model, IUpdateModel updater)
+        public override async Task<IDisplayResult> UpdateAsync(SeoPart model, UpdatePartEditorContext context)
         {
-            await updater.TryUpdateModelAsync(model, Prefix, t => t.Description, t => t.Keywords);
+            await context.Updater.TryUpdateModelAsync(model, Prefix, t => t.Description, t => t.Keywords);
 
-            return Edit(model);
+            return Edit(model, context);
         }
     }
 }
