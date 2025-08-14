@@ -5,7 +5,7 @@
     <Title>SEO module for Orchard Core</Title>
     <Description>The SEO module allows you to manage metadata.</Description>
     <PackageTags>SEO;OrchardCore</PackageTags>
-    <VersionPrefix>2.1.7</VersionPrefix>
+    <VersionPrefix>2.1.8</VersionPrefix>
     <VersionSuffix></VersionSuffix>
   </PropertyGroup>
 
